@@ -15,14 +15,46 @@ Reading a .epw file:
 
 ```python
 >>> from epw import epw
->>> epw.read('C:\...)
->>> print(epw)
+>>> a=epw()
+>>> a.read(r'C:\EnergyPlusV8-9-0\WeatherData\USA_CA_San.Francisco.Intl.AP.724940_TMY3.epw')
+>>> print(a)
 
 ```
 
+Viewing the header information:
 
+```python
+>>> d=a.headers # this is a dictionary of the header information
+>>> print(d) 
 
+```
 
+Viewing the climate data
+```python
+>>> df=a.dataframe  # this is pandas dataframe
+>>> print(df.head())
+
+```
+
+Modifying the header information:
+
+```python
+>>> 
+
+```
+
+Modifying the climate data:
+
+```python
+>>> 
+
+```
+
+Saving the modified .epw file:
+
+```python
+>>> a.save('new_epw_file.epw')
+```
 
 
 
