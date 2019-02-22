@@ -4,7 +4,6 @@ import pandas as pd
 import csv
 
 class epw():
-    
     """A class which represents an EnergyPlus weather (epw) file
     """
     
@@ -13,13 +12,9 @@ class epw():
         """
         self.headers={}
         self.dataframe=pd.DataFrame()
-        
-        
-        pass
-    
+            
     
     def read(self,fp):
-        
         """Reads an epw file 
         
         Arguments:
@@ -32,7 +27,6 @@ class epw():
                 
         
     def _read_headers(self,fp):
-        
         """Reads the headers of an epw file
         
         Arguments:
@@ -55,7 +49,6 @@ class epw():
     
     
     def _read_data(self,fp):
-        
         """Reads the climate data of an epw file
         
         Arguments:
@@ -111,7 +104,6 @@ class epw():
         
         
     def _first_row_with_climate_data(self,fp):
-        
         """Finds the first row with the climate data of an epw file
         
         Arguments:
@@ -129,6 +121,22 @@ class epw():
                     break
         return i
         
+        
+    def write(self,fp):
+        """Writes an epw file 
+        
+        Arguments:
+            - fp (str): the file path of the new epw file   
+        
+        """
+        
+        with open(fp, 'w', newline='') as csvfile:
+            csvwriter = csv.writer(csvfile, delimiter=',',
+                                    quotechar='"', quoting=csv.QUOTE_MINIMAL)
+            for k,v in self.headers.items():
+                csvwriter.writerow([k]+v)
+            for row in self.dataframe.iterrows():
+                csvwriter.writerow(row[1].tolist())
         
         
         
