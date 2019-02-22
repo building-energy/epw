@@ -19,8 +19,8 @@ class TestEpw(unittest.TestCase):
         a=epw()
         a.read(r'C:\EnergyPlusV8-9-0\WeatherData\USA_CA_San.Francisco.Intl.AP.724940_TMY3.epw')
         print(a.headers)
-        with pd.option_context('display.max_columns', 500):
-            print(a.dataframe[0:5])
+        print(a.dataframe.columns)
+        print(a.dataframe[['Year', 'Month', 'Day', 'Hour', 'Minute','Dry Bulb Temperature']].head())
         
 
 if __name__=='__main__':
