@@ -52,21 +52,30 @@ Viewing the climate data
 Modifying the header information:
 
 ```python
->>> 
+>>> a.headers['LOCATION'][0]='New_location' # modifies the location city
+>>> print(a.headers['LOCATION'])
+['New_location', 'CA', 'USA', 'TMY3', '724940', '37.62', '-122.40', '-8.0', '2.0']
 
 ```
 
 Modifying the climate data:
 
 ```python
->>> 
+>>> a.dataframe['Dry Bulb Temperature']=a.dataframe['Dry Bulb Temperature']+1.0 # increases dry bulb temperature by 1 degree C
+>>> print(a.dataframe[['Year', 'Month', 'Day', 'Hour', 'Minute','Dry Bulb Temperature']].head())
+   Year  Month  Day  Hour  Minute  Dry Bulb Temperature
+0  1999      1    1     1       0                   8.2
+1  1999      1    1     2       0                   8.2
+2  1999      1    1     3       0                   7.7
+3  1999      1    1     4       0                   7.1
+4  1999      1    1     5       0                   5.4
 
 ```
 
 Saving the modified .epw file:
 
 ```python
->>> a.save('new_epw_file.epw')
+>>> a.write('new_epw_file.epw')
 ```
 
 

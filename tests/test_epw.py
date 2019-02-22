@@ -23,6 +23,18 @@ class TestEpw(unittest.TestCase):
         print(a.dataframe[['Year', 'Month', 'Day', 'Hour', 'Minute','Dry Bulb Temperature']].head())
         
 
+    def test_modify(self):
+        a=epw()
+        a.read(r'C:\EnergyPlusV8-9-0\WeatherData\USA_CA_San.Francisco.Intl.AP.724940_TMY3.epw')
+        
+        a.headers['LOCATION'][0]='New_location'
+        print(a.headers['LOCATION'])
+        
+        a.dataframe['Dry Bulb Temperature']=a.dataframe['Dry Bulb Temperature']+1.0
+        print(a.dataframe[['Year', 'Month', 'Day', 'Hour', 'Minute','Dry Bulb Temperature']].head())
+        
+        a.write('new_epw_file.epw')
+
 if __name__=='__main__':
     
     o=unittest.main(TestEpw())  
