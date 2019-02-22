@@ -40,12 +40,110 @@ Viewing the climate data
 ```python
 >>> df=a.dataframe  # this is pandas dataframe
 >>> print(df.head())
-   Year              ...                Liquid Precipitation Quantity
-0  1999              ...                                          1.0
-1  1999              ...                                          1.0
-2  1999              ...                                          1.0
-3  1999              ...                                          1.0
-4  1999              ...                                          1.0
+   Year  Month  Day  Hour  Minute  \
+0  1999      1    1     1       0   
+1  1999      1    1     2       0   
+2  1999      1    1     3       0   
+3  1999      1    1     4       0   
+4  1999      1    1     5       0   
+
+                   Data Source and Uncertainty Flags  Dry Bulb Temperature  \
+0  ?9?9?9?9E0?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9*9*9?9...                   7.2   
+1  ?9?9?9?9E0?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9*9*9?9...                   7.2   
+2  ?9?9?9?9E0?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9*9*9?9...                   6.7   
+3  ?9?9?9?9E0?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9*9*9?9...                   6.1   
+4  ?9?9?9?9E0?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9*9*9?9...                   4.4   
+
+   Dew Point Temperature  Relative Humidity  Atmospheric Station Pressure  \
+0                    5.6                 90                        102200   
+1                    5.6                 90                        102100   
+2                    5.0                 89                        102200   
+3                    5.0                 93                        102200   
+4                    3.9                 97                        102200   
+
+   Extraterrestrial Horizontal Radiation  \
+0                                      0   
+1                                      0   
+2                                      0   
+3                                      0   
+4                                      0   
+
+   Extraterrestrial Direct Normal Radiation  \
+0                                         0   
+1                                         0   
+2                                         0   
+3                                         0   
+4                                         0   
+
+   Horizontal Infrared Radiation Intensity  Global Horizontal Radiation  \
+0                                      290                            0   
+1                                      296                            0   
+2                                      291                            0   
+3                                      276                            0   
+4                                      280                            0   
+
+   Direct Normal Radiation  Diffuse Horizontal Radiation  \
+0                        0                             0   
+1                        0                             0   
+2                        0                             0   
+3                        0                             0   
+4                        0                             0   
+
+   Global Horizontal Illuminance  Direct Normal Illuminance  \
+0                              0                          0   
+1                              0                          0   
+2                              0                          0   
+3                              0                          0   
+4                              0                          0   
+
+   Diffuse Horizontal Illuminance  Zenith Luminance  Wind Direction  \
+0                               0                 0               0   
+1                               0                 0             170   
+2                               0                 0             210   
+3                               0                 0             200   
+4                               0                 0             260   
+
+   Wind Speed  Total Sky Cover  \
+0         0.0                2   
+1         2.1                4   
+2         2.1                3   
+3         1.5                0   
+4         3.1                3   
+
+   Opaque Sky Cover (used if Horizontal IR Intensity missing)  Visibility  \
+0                                                  2                 16.0   
+1                                                  4                 16.0   
+2                                                  3                 16.0   
+3                                                  0                 16.0   
+4                                                  3                 16.0   
+
+   Ceiling Height  Present Weather Observation  Present Weather Codes  \
+0           77777                            9              999999999   
+1           77777                            9              999999999   
+2           77777                            9              999999999   
+3           77777                            9              999999999   
+4           77777                            9              999999999   
+
+   Precipitable Water  Aerosol Optical Depth  Snow Depth  \
+0                 129                  0.108           0   
+1                 120                  0.108           0   
+2                 120                  0.108           0   
+3                 120                  0.108           0   
+4                 120                  0.108           0   
+
+   Days Since Last Snowfall  Albedo  Liquid Precipitation Depth  \
+0                        88    0.16                         0.0   
+1                        88    0.16                         0.0   
+2                        88    0.16                         0.0   
+3                        88    0.16                         0.0   
+4                        88    0.16                         0.0   
+
+   Liquid Precipitation Quantity  
+0                            1.0  
+1                            1.0  
+2                            1.0  
+3                            1.0  
+4                            1.0 
 ```
 
 Modifying the header information:
