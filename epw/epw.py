@@ -135,8 +135,5 @@ class epw():
                                     quotechar='"', quoting=csv.QUOTE_MINIMAL)
             for k,v in self.headers.items():
                 csvwriter.writerow([k]+v)
-            for row in self.dataframe.iterrows():
-                csvwriter.writerow(row[1].tolist())
-        
-        
-        
+            for row in self.dataframe.itertuples(index= False):
+                csvwriter.writerow(i for i in row)
