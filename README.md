@@ -7,6 +7,12 @@ EnergyPlus weather files or .epw files are comma separated variable (csv) files 
 
 This package provides a `epw` class for reading, modifying and saving .epw files.
 
+## Installation
+
+`pip install git+https://github.com/building-energy/epw.git@master`
+
+Or save the entire package locally, and do a local pip install.
+
 ## Usage
 
 Reading a .epw file:
